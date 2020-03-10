@@ -13,21 +13,17 @@
     @endif
 
     <div class="container">
-        <h3>Edit Student Form</h3>
-        <form action="{{ route('crud.update', $students->id) }}" method="post">
+        <h3>Edit Lecturer Form</h3>
+        <form action="{{ route('lect.update', $lecturers->id) }}" method="post">
             @csrf
             @method('patch')
             <div class="form-group">
                 <label for="">Name</label>
-                <input type="text" class="form-control" name="name" id="" value="{{ $students->name }}">
+                <input type="text" class="form-control" name="name" id="" value="{{ $lecturers->name }}">
             </div>
             <div class="form-group">
                 <label for="">Address</label>
-                <textarea class="form-control" name="address" id="">{{ $students->address }}</textarea>
-            </div>
-            <div class="form-group">
-                <label for="">Faculty</label>
-                <input type="text" class="form-control" name="faculty" id="" value="{{ $students->faculty }}">
+                <textarea class="form-control" name="address" id="">{{ $lecturers->address }}</textarea>
             </div>
             <div class="form-group">
                 <button class="btn btn-primary">Save</button>

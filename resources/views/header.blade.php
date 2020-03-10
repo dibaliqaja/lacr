@@ -32,7 +32,10 @@
                     <a class="nav-link" href="{{ url('/about') }}">About <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="{{ url('/crud') }}">CRUD <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="{{ url('/crud') }}">Students <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ url('/lecturers') }}">Lecturers <span class="sr-only">(current)</span></a>
                 </li>
             </ul>
         </div>

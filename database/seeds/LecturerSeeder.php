@@ -3,7 +3,7 @@
 use Illuminate\Database\Seeder;
 use Faker\Factory as Faker;
 
-class StudentSeeder extends Seeder
+class LecturerSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,10 +15,9 @@ class StudentSeeder extends Seeder
         $faker = Faker::create('id_ID');
 
     	for($i = 1; $i <= 10; $i++){
-    		DB::table('students')->insert([
+    		DB::table('lecturers')->insert([
     			'name' => $faker->name,
     			'address' => $faker->address,
-    			'faculty' => "Software Engineering",
             ]);
         }
     }

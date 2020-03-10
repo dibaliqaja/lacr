@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Students;
+use App\Lecturers;
 use Illuminate\Http\Request;
 
-class StudentsController extends Controller
+class LecturerController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class StudentsController extends Controller
      */
     public function index()
     {
-        $students = Students::paginate(10);
-        return view('students.index', compact('students'));
+        $lecturers = Lecturers::paginate(10);
+        return view('lecturers.index', compact('lecturers'));
     }
 
     /**
@@ -25,7 +25,7 @@ class StudentsController extends Controller
      */
     public function create()
     {
-        return view('students.create');
+        return view('lecturers.create');
     }
 
     /**
@@ -39,15 +39,13 @@ class StudentsController extends Controller
         $this->validate($request, [
             'name' => 'required',
             'address' => 'required',
-            'faculty' => 'required',
         ]);
 
-        Students::create([
+        Lecturers::create([
             'name' => $request->name,
             'address' => $request->address,
-            'faculty' => $request->faculty
         ]);
-        return redirect()->route('crud.index')->with('success','Data Students Saved');
+        return redirect()->route('lect.index')->with('success','Data Lecturer Saved');
     }
 
     /**
@@ -69,8 +67,8 @@ class StudentsController extends Controller
      */
     public function edit($id)
     {
-        $students = Students::findorfail($id);
-        return view('students.edit', compact('students'));
+        $lecturers = Lecturers::findorfail($id);
+        return view('lecturers.edit', compact('lecturers'));
     }
 
     /**
@@ -85,18 +83,16 @@ class StudentsController extends Controller
         $this->validate($request, [
             'name' => 'required',
             'address' => 'required',
-            'faculty' => 'required',
         ]);
 
-        $student_data = [
+        $lecturer_data = [
             'name' => $request->name,
             'address' => $request->address,
-            'faculty' => $request->faculty
         ];
 
-        Students::whereId($id)->update($student_data);
+        Lecturers::whereId($id)->update($lecturer_data);
 
-        return redirect()->route('crud.index')->with('success','Data Student Updated');
+        return redirect()->route('lect.index')->with('success','Data Lecturer Updated');
     }
 
     /**
@@ -107,9 +103,9 @@ class StudentsController extends Controller
      */
     public function destroy($id)
     {
-        $students = Students::findorfail($id);
-        $students->delete();
+        $lecturers = Lecturers::findorfail($id);
+        $lecturers->delete();
 
-        return redirect()->back()->with('success','Data Student Deleted');
+        return redirect()->back()->with('success','Data Lecturer Deleted');
     }
 }

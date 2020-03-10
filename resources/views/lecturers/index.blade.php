@@ -8,7 +8,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 mx-auto">
-                <h2>Students Page</h2>
+                <h2>Lecturers Page</h2>
                 @if (Session::has('success'))
                 <div class="alert alert-success alert-dismissible fade show" role="alert">
                     {{ Session('success') }}
@@ -18,7 +18,7 @@
                 </div>
                 @endif
 
-                <a href="{{ route('crud.create') }}" class="btn btn-info">Add Student</a><br><br>
+                <a href="{{ route('lect.create') }}" class="btn btn-info">Add Lecturer</a><br><br>
 
                 <table class="table table-hover">
                     <thead>
@@ -26,22 +26,21 @@
                             <th>No</th>
                             <th>Name</th>
                             <th>Address</th>
-                            <th>Faculty</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($students as $result => $hasil)
+                        @foreach ($lecturers as $result => $hasil)
                         <tr>
-                            <td>{{ $result + $students->firstitem() }}</td>
+                            <td>{{ $result + $lecturers->firstitem() }}</td>
                             <td>{{ $hasil->name }}</td>
                             <td>{{ $hasil->address }}</td>
                             <td>{{ $hasil->faculty }}</td>
                             <td>
-                                <form action="{{ route('crud.destroy', $hasil->id) }}" method="post">
+                                <form action="{{ route('lect.destroy', $hasil->id) }}" method="post">
                                     @csrf
                                     @method('delete')
-                                    <a href="{{ route('crud.edit', $hasil->id) }}" class="btn btn-primary">Edit</a>
+                                    <a href="{{ route('lect.edit', $hasil->id) }}" class="btn btn-primary">Edit</a>
                                     <button type="submit" class="btn btn-danger">Delete</button>
                                 </form>
                             </td>
@@ -50,7 +49,7 @@
                     </tbody>
                 </table>
             </div>
-            {{ $students->links() }}
+            {{ $lecturers->links() }}
         </div>
     </div>
 </section>

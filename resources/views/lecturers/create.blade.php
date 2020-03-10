@@ -22,8 +22,8 @@
 
 
     <div class="container">
-        <h3>Add Student Form</h3>
-            <form action="{{ route('crud.store') }}" method="post">
+        <h3>Add Lecturer Form</h3>
+            <form action="{{ route('lect.store') }}" method="post">
                 @csrf
                 <div class="form-group">
                     <label for="">Name</label>
@@ -32,10 +32,6 @@
                 <div class="form-group">
                     <label for="">Address</label>
                     <textarea class="form-control" name="address" id=""></textarea>
-                </div>
-                <div class="form-group">
-                    <label for="">Faculty</label>
-                    <input type="text" class="form-control" name="faculty" id="">
                 </div>
                 <div class="form-group">
                     <button class="btn btn-primary">Save</button>
