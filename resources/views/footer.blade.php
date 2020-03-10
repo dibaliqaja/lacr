@@ -1,5 +1,5 @@
     <!-- Footer -->
-    <footer class="page-footer font-small blue" style="position: absolute;right: 0;bottom:0;left:0;">
+    <footer class="page-footer font-small blue" style="position: sticky;right: 0;bottom:0;left:0;">
 
         <!-- Copyright -->
         <div class="py-3 bg-info">

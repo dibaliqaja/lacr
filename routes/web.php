@@ -19,3 +19,4 @@ Route::get('/', function () {
 
 Route::get('/', 'PageController@index');
 Route::get('/about', 'PageController@about');
+Route::resource('/crud', 'StudentsController');
